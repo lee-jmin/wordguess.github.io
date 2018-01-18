@@ -31,6 +31,8 @@ return randomNumber;
 startButton.onclick = function reset(){	
 	wrongAlphabetCount = 0;
 	wrongDivSpan.innerHTML="";
+	inputAlphabetTextArray=[];
+	inputAlphabetCorrectTextArray=[];
 	for (var i = 0; i < blankSpace.length; i++) {
 		blankSpace[i].innerHTML="-";
 		blankSpace[i].classList.remove("hidden");

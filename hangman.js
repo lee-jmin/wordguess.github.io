@@ -64,7 +64,9 @@ startButton.onclick = function reset(){
 	submitButton.onclick = function(event){
 		event.preventDefault();
 
-		const inputAlphabetText = document.querySelector("#input-alphabet-id").value;//get userinput value
+		const inputAlphabetTextGen = document.querySelector("#input-alphabet-id").value;//get userinput value
+
+		const inputAlphabetText = inputAlphabetTextGen.toLowerCase();
 
 		//validate user Input
 		if (parseInt(inputAlphabetText)) {
@@ -93,6 +95,7 @@ startButton.onclick = function reset(){
 					if (matchCount==chosenWordDivSpans.length) {
 						window.alert("Win!");				
 						matchCount=0;//reset matchCount
+						inputDiv.classList.add("hidden");
 					}
 				}
 				
@@ -111,7 +114,8 @@ startButton.onclick = function reset(){
 						guessesLeft.innerHTML=(8-wrongAlphabetCount);
 						//lose game condition
 						if (wrongAlphabetCount==8) {
-							window.alert("Hang! >.< Please try again.")
+							window.alert("Hang! >.< Click restart for a new game.")
+							inputDiv.classList.add("hidden");
 						}					
 					}	
 				}
